@@ -1,7 +1,31 @@
 //We want to COMPLETELY reverse an array by flipping the order of the entries AND flipping the order of characters in each element.
+const input = require('readline-sync');
+
+// variables
+let arr1 = ['apple', 'potato', 'Capitalized Words'];
+let arr2 = [123, 8897, 42, 1138, 8675309];
+let arr3 = ['hello', 'world', 123, 'orange'];
+let str1 = 'apple';
+let str2 = 'LC101';
+let str3 = 'Capitalized Letters';
+let str4 = 'I love the smell of code in the morning.';
+
+let num1 = 1234;
+let num2 = 876565467;
 
 // Part One: Reverse Characters
-
+function reverseCharactersreverse(word) {
+    if (typeof word == 'string') {
+        return word.split('').reverse().join('');
+    } else if (typeof word == 'number') {
+        word = String(word)
+        word = word.split('').reverse().join('');
+        word = Number(word)
+        return word
+    }
+};
+// console.log(reverseCharactersreverse(num1));
+// console.log(typeof num1);
 // 1. Define the function as reverseCharacters. Give it one parameter, which will be the string to reverse.
 // 2. Within the function, split the string into an array, then reverse the array.
 // 3. Use join to create the reversed string and return that string from the function.
@@ -25,10 +49,29 @@
 // 4. Add the reversed string (or number) to the array defined in part ‘a’.
 // 5. Return the final, reversed array.
 // 6. Be sure to print the results from each test case in order to verify your code.
+let arrayj = [];
+
 
 let arrayTest1 = ['apple', 'potato', 'Capitalized Words'];
 let arrayTest2 = [123, 8897, 42, 1168, 8675309];
 let arrayTest3 = ['hello', 'world', 123, 'orange'];
+
+function reverseArray(arr) {
+    for (i = 0; i < arr.length; i++) {
+        // arrayj.push(arr[i].split('').reverse().join(''));
+        if (typeof arr[i] == "string") {
+            arrayj.push(arr[i].split('').reverse().join(''))
+        } else if (typeof arr[i] === "number") {
+            arr[i] = String(arr[i]);
+            arr[i] = arr[i].split('').reverse().join('');
+            arr[i] = Number(arr[i])
+            arrayj.push(arr[i])
+        }
+        
+    }
+    return arrayj;
+};
+console.log(reverseArray(arrayTest3));
 
 // Bonus Missions
 
